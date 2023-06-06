@@ -3,7 +3,21 @@ import React from 'react';
 
 
 const generateID = () => {
-    return "dsads";
+
+    const str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+    console.log("Generating");
+    let result = "";
+
+    for(let i = 0; i < 35; i++){
+
+        // here 52 is the length of the string we will be taking randomNumber from 0 to 52
+        const randomNumber = ~~(Math.random() * 52);
+        result += str[randomNumber];
+    }
+
+    return result;
+
 }
 
 
