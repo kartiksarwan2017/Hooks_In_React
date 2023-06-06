@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import './App.css';
 
 
@@ -8,10 +8,17 @@ function App() {
   
   In order to prevent change in the value of id when there is change in value of state variable show we use useMemo() Hook */
   const [show, setShow] = useState(false);
+  // const [id, setId] = useState("");
   
-  const id = Math.random() * 34;
+  const id = useMemo(() => {
+    return Math.random() * 34;
+  }, []);
 
-  return (
+  // useEffect(() => {
+  //   setId(Math.random() * 34);
+  // }, []);
+
+  return ( 
     <>
     <div className="app-container">
 
