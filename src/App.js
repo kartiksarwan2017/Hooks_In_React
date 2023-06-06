@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import './App.css';
+import Example2 from './components/Example2';
 
 
 function App() {
@@ -28,6 +29,9 @@ function App() {
         {show ? "Hide" : "Reveal"}
       </button>
       <p>{show ? "some api key" : "*********"}</p>
+
+
+      <Example2 />
     </div>
     </>
   );
