@@ -26,7 +26,9 @@ const Example2 = () => {
     const [show, setShow] = useState(false);
     const [val, setVal] = useState("");
 
-    const randomId = generateID();
+    /* the value of the randomId gets changed when the component get rerendered and
+    when the value of state variable val given as value in input gets changed */
+    const randomId = useMemo(generateID, [val]);
 
   return (
     <>
