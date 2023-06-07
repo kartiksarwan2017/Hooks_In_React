@@ -22,16 +22,20 @@ so upon clicking the button in App Component the value of num in the Boi Compone
 In order to resolve this we use useCallback() Hook
 */
 
-import React, { useEffect, useState, memo } from 'react';
+import React, { useEffect, useState, memo, useMemo } from 'react';
 
 const Boi = ({fetchData}) => {
 
   console.log("I am Boi");
-  const [num, setNum] = useState("");
+  // const [num, setNum] = useState("");
 
-  useEffect(() => {
-    setNum(fetchData(5));
-  }, [fetchData]);
+  // useEffect(() => {
+  //   setNum(fetchData(5));
+  // }, [fetchData]);
+
+
+  // const num = useMemo(fetchData, [fetchData]);
+  const num = useMemo(() => fetchData(10), [fetchData]);
 
   return (
     <div>
