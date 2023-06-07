@@ -1,21 +1,8 @@
 import { useState, useMemo } from "react";
 import React from 'react';
-import {checkAvailability} from "../utils/features";
+import {checkAvailability , generateID} from "../utils/features";
 
 
-const generateID = () => {
-  
-  const str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmonopqrstuvwxyz";
-  console.log("Generating");
-  let result = "";
-  for(let i = 0; i < 35; i++){
-    const randomNumber = ~~(Math.random() * 52);
-    result += str[randomNumber];
-  }
-
-  return result;
-
-}
 
 const Example3 = () => {
 
@@ -24,7 +11,7 @@ const Example3 = () => {
   const [username, setUserName] = useState("");
 
   const randomId = useMemo(generateID, [val]);
-  const usernameAvailable = true;
+  const usernameAvailable = useMemo(checkAvailability, [username]);
 
   return (
     <>
@@ -43,7 +30,6 @@ const Example3 = () => {
         onChange={(e) => setVal(e.target.value)}
         placeholder= {"Text..."}  
       />
-
 
       <div 
         style={{
