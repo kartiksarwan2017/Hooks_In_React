@@ -3,7 +3,6 @@ import React from 'react';
 import {checkAvailability , generateID} from "../utils/features";
 
 
-
 const Example3 = () => {
 
   const [show, setShow] = useState(false);
